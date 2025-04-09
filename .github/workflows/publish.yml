@@ -12,18 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Create build directory
-        run: mkdir -p build
-
-      - name: Copy files for deployment
-        run: |
-          # Copy all files except .git and .github
-          rsync -av --exclude='.git' --exclude='.github' . build/
-
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build  # Deploy only the build folder
+          folder: .  # Deploy only the build folder
           branch: gh-pages  # The branch the action should deploy to
           clean: true  # Automatically remove deleted files from the deploy branch
           single-commit: true  # Make a single commit with all changes
