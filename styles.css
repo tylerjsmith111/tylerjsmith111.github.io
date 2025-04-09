@@ -1,0 +1,690 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+header {
+    background-color: #4b0082; /* Rich indigo */
+    color: white;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+nav {
+    padding: 0;
+    text-align: right;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+nav a:hover {
+    text-decoration: none;
+    color: #e6e6fa; /* Lavender */
+    transform: translateY(-2px);
+}
+
+/* Navigation active state */
+nav a.active {
+    position: relative;
+    font-weight: 600;
+}
+
+nav a.active:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e6e6fa;
+}
+
+.container {
+    padding: 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.profile-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    transition: transform 0.3s ease;
+}
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 270px;
+    height: 270px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center top; /* This shifts the focus point upward to center on the face */
+    border: 4px solid #f0f0f0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+.profile-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+}
+
+.profile-text h1 {
+    margin-top: 0;
+    color: #4b0082;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+.profile-text p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 1.2rem;
+}
+
+/* Credentials styling */
+.credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.credential {
+    background-color: #f0f0f0;
+    color: #4b0082;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.profile-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem; /* Increased from 1rem to 2rem to provide more space between buttons */
+}
+.linkedin-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #0077b5;
+    color: white;
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.linkedin-button:hover {
+    background-color: #005582;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.linkedin-button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+.linkedin-button:hover:after {
+    height: 100%;
+}
+.linkedin-icon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+.github-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.github-button:hover {
+    background-color: #24292e;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.github-button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+.github-button:hover:after {
+    height: 100%;
+}
+.github-icon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+/* CV Button */
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #4b0082;
+    color: white;
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.cv-button:hover {
+    background-color: #3a0066;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.cv-button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+.cv-button:hover:after {
+    height: 100%;
+}
+
+/* Research Interests */
+.research-interests {
+    max-width: 900px;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.research-interests h2 {
+    color: #4b0082;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+}
+
+.research-interests h2:after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: #4b0082;
+    bottom: -10px;
+    left: 20%;
+}
+
+.interests-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.interest-item {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.interest-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.interest-item i {
+    font-size: 2.5rem;
+    color: #4b0082;
+    margin-bottom: 1rem;
+}
+
+.interest-item h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background-color: #4b0082;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+footer:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, rgba(230, 230, 250, 0.5), transparent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .credentials {
+        justify-content: center;
+    }
+/* 
+    .profile-text {
+        text-align: center;
+    } */
+    
+    .profile-text h1{
+        text-align: center;
+    }
+
+    .profile-buttons {
+        justify-content: center;
+    }
+    
+    .profile-img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .interests-container {
+        gap: 1rem;
+    }
+    
+    .interest-item {
+        width: calc(33% - 2rem);
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .profile-card {
+        padding: 1.5rem;
+    }
+    
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .profile-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .profile-text p {
+        font-size: 1rem;
+    }
+
+    .credentials {
+        justify-content: center;
+    }
+    
+    .interest-item {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Page Title Styling */
+.page-title {
+    color: #4b0082;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.page-title:after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: #4b0082;
+    bottom: -10px;
+    left: 20%;
+}
+
+/* Research Sections */
+.research-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    overflow: hidden; /* Added to prevent content from overflowing */
+}
+
+.research-section h2 {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #4b0082;
+    text-align: left;
+}
+
+.research-section h2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #4b0082;
+}
+
+/* Publication Card */
+.publication-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    transition: transform 0.3s ease;
+    padding-left: 2rem; /* Add extra padding for the pseudo-element */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.publication-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #4b0082;
+}
+
+.publication-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.publication-card:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4b0082;
+    transition: width 0.5s ease;
+}
+
+.publication-card:hover:after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+.publication-content h3 {
+    color: #333;
+    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.publication-meta {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.publication-meta i {
+    opacity: 0.8;
+    margin-right: 3px;
+    color: #4b0082;
+}
+
+.journal {
+    font-weight: 600;
+    color: #4b0082;
+}
+
+.publication-abstract {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    text-align: left;
+    
+}
+
+.publication-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Project Cards */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduced minimum width */
+    gap: 1rem; /* Reduced gap */
+    margin: 3rem auto;
+    width: 100%;
+    box-sizing: border-box; /* Added to include padding in the width calculation */
+}
+
+.project-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: .5rem;
+    transition: transform 0.3s ease;
+    height: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.project-card:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4b0082;
+    transition: width 0.5s ease;
+}
+
+.project-card:hover:after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+.project-card h3 {
+    color: #333;
+    margin-top: 0;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.project-status {
+    color: #4b0082;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.project-status i {
+    opacity: 0.8;
+    margin-right: 3px;
+    color: #4b0082;
+}
+
+.project-links {
+    margin-top: 1.5rem;
+}
+
+/* Button Styling */
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #4b0082;
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.button:hover {
+    background-color: #3a0066;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+
+.button:hover:after {
+    height: 100%;
+}
+
+.scholar-button {
+    background-color: #4285F4;
+}
+
+.scholar-button:hover {
+    background-color: #2b6ed4;
+}
+
+/* Responsive Adjustments for Research Page */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .publication-links {
+        flex-direction: column;
+        align-items: center;
+    }
+        
+    .publication-card {
+        padding: 1.2rem;
+    }
+    
+    .research-section {
+        padding: 1.5rem;
+    }
+}
