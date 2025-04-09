@@ -21,6 +21,3 @@ Thumbs.db
 
 # GitHub Actions secrets
 .github/secrets/
-
-# Exclude images folder (if not needed in version control)
-images/
