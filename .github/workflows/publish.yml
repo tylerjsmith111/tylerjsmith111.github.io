@@ -24,7 +24,7 @@ jobs:
           sudo apt-get update && sudo apt-get install -y wget curl
           
           # Download the image using the secret URL
-          curl -L "${{ secrets.HEADSHOT_URL }}" -o "images/headshot.jpg"
+          curl -L "${{ secrets.HEADSHOT_URL }}" -o "images/headshot.JPG"
       
       - name: Copy files for deployment
         run: |
