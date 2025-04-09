@@ -1,0 +1,1 @@
+👋 Welcome! I'm Tyler Smith, a medical student at Northwestern University Feinberg School of Medicine with a Master's in Artificial Intelligence and a background in Applied Mathematics-Biology from Brown University. 
