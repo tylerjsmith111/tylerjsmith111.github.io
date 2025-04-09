@@ -15,6 +15,9 @@ jobs:
       - name: Create build directory
         run: mkdir -p build
 
+      - name: Ensure images directory exists
+        run: mkdir -p images
+
       - name: Download headshot from Google Drive
         run: |
           # Install required tool for downloading
