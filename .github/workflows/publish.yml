@@ -15,25 +15,10 @@ jobs:
       - name: Create build directory
         run: mkdir -p build
 
-      - name: Ensure images directory exists
-        run: mkdir -p images
-
-      - name: Download headshot from Google Drive
-        run: |
-          # Install required tool for downloading
-          sudo apt-get update && sudo apt-get install -y wget curl
-          
-          # Download the image using the secret URL
-          curl -L "${{ secrets.HEADSHOT_URL }}" -o "images/headshot.JPG"
-      
       - name: Copy files for deployment
         run: |
-          # Copy everything except the images folder
-          rsync -av --exclude='images' --exclude='.git' --exclude='.github' . build/
-          # Create an empty images folder in build
-          mkdir -p build/images
-          # Copy any other images you want to include (but not headshot)
-          # cp images/other-public-image.jpg build/images/
+          # Copy all files except .git and .github
+          rsync -av --exclude='.git' --exclude='.github' . build/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
