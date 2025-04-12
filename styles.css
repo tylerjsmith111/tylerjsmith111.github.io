@@ -133,7 +133,9 @@ nav a.active:after {
     display: flex;
     justify-content: flex-start;
     gap: 2rem; /* Increased from 1rem to 2rem to provide more space between buttons */
+
 }
+
 .linkedin-button {
     display: inline-flex;
     align-items: center;
@@ -345,77 +347,6 @@ footer:before {
     width: 100%;
     height: 5px;
     background: linear-gradient(90deg, transparent, rgba(230, 230, 250, 0.5), transparent);
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .profile-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
-    
-    .credentials {
-        justify-content: center;
-    }
-/* 
-    .profile-text {
-        text-align: center;
-    } */
-    
-    .profile-text h1{
-        text-align: center;
-    }
-
-    .profile-buttons {
-        justify-content: center;
-    }
-    
-    .profile-img {
-        width: 220px;
-        height: 220px;
-    }
-
-    .interests-container {
-        gap: 1rem;
-    }
-    
-    .interest-item {
-        width: calc(33% - 2rem);
-        padding: 1.5rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .container {
-        padding: 1rem;
-    }
-    
-    .profile-card {
-        padding: 1.5rem;
-    }
-    
-    .profile-img {
-        width: 180px;
-        height: 180px;
-    }
-    
-    .profile-text h1 {
-        font-size: 1.8rem;
-    }
-    
-    .profile-text p {
-        font-size: 1rem;
-    }
-
-    .credentials {
-        justify-content: center;
-    }
-    
-    .interest-item {
-        width: 100%;
-        max-width: 300px;
-    }
 }
 
 /* Page Title Styling */
@@ -669,10 +600,90 @@ footer:before {
     background-color: #2b6ed4;
 }
 
-/* Responsive Adjustments for Research Page */
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .credentials {
+        justify-content: center;
+    }
+/* 
+    .profile-text {
+        text-align: center;
+    } */
+    
+    .profile-text h1{
+        text-align: center;
+    }
+
+    .profile-buttons {
+        justify-content: center;
+    }
+    
+    .profile-img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .interests-container {
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+        gap: 1rem;
+    }
+    
+    /* .interest-item {
+        width: 100%;
+        max-width: 300px;
+    } */
+}
+
 @media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .profile-card {
+        padding: 1.5rem;
+    }
+    
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .profile-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .profile-text p {
+        font-size: 1rem;
+    }
+
+    .credentials {
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+    }
+    
+    .profile-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    /* .interest-item {
+        width: 100%;
+        max-width: 300px;
+    } */
+    /* Responsive Adjustments for Research Page */
     .projects-container {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .publication-links {
